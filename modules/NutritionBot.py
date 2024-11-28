@@ -7,6 +7,7 @@ from AnswerGenerator import AnswerGenerator
 from ResultFormatter import ResultFormatter
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
+import os
 
 class NutritionBot:
     def __init__(self, temp=0.5, 
@@ -16,7 +17,7 @@ class NutritionBot:
                        persist_directory='../chroma_db'):
         # Load environment and API keys
         load_dotenv()
-        api_key = os.environ['OPENAI_APIKEY']
+        api_key = os.environ['OPENAI_API_KEY']
 
         self.embeddings_model_name = embeddings_model_name
         self.temp = temp

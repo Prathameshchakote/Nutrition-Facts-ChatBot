@@ -1,15 +1,4 @@
-import os
 import streamlit as st
-from dotenv import load_dotenv
-from openai import OpenAI
-from langchain.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
-# from langchain.embeddings import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate,MessagesPlaceholder
-from langchain.schema.messages import HumanMessage, AIMessage
-from langchain.schema.output_parser import StrOutputParser
-from ContextRetriever import ContextRetriever
 from NutritionBot import NutritionBot
 
 # Streamlit UI
