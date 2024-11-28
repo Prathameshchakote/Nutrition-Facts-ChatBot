@@ -3,8 +3,7 @@
 
 # Nutrition Facts ChatBot
 
-The **Nutrition Facts ChatBot** is an AI-powered Retrieval-Augmented Generation (RAG) application that recommends nutrition-related YouTube videos based on user queries. It uses advanced natural language processing (NLP) models to deliver personalized recommendations.
-
+The **Nutrition Facts ChatBot** is an AI-powered Retrieval-Augmented Generation (RAG) application that recommends nutrition-related YouTube videos based on user queries. 
 ## Table of Contents
 
 1. [Installation](#installation)
