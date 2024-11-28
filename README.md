@@ -32,13 +32,17 @@ Navigate to the project directory and install the required Python packages:
 cd Nutrition-Facts-ChatBot
 pip install -r modules/requirements.txt
 ```
+### 2. Environment variable
 
-### 3. Run the Application
+Set the OpenAI Environment variable
+export $OPENAI_API_KEY = your_openai_api_key
+
+### 4. Run the Application
 
 After installing the dependencies, you can run the application with Streamlit:
 
 ```bash
-python -m streamlit run rag_own3.py
+python -m streamlit run modules/app.py
 ```
 
 This will start a local server where you can interact with the Nutrition Facts ChatBot.
@@ -51,3 +55,10 @@ The following technologies were used in the development of this project:
 - **ChromaDB**: A database optimized for storing and querying vector embeddings for efficient information retrieval.
 - **Streamlit**: A framework for building interactive web applications with Python.
 - **OpenAI**: GPT-based language models for natural language understanding and generation.
+
+
+### 4. Application UI
+
+  <img width="1267" alt="image" src="https://github.com/user-attachments/assets/fc19c522-fd82-4111-8fb8-415533b0de6d">
+
+
