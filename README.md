@@ -36,7 +36,14 @@ pip install -r modules/requirements.txt
 Set the OpenAI Environment variable
 export $OPENAI_API_KEY = your_openai_api_key
 
-### 4. Run the Application
+### 4. Setup The Vector Database
+
+```bash
+python modules/create_vectordb.py
+```
+
+
+### 5. Run the Application
 
 After installing the dependencies, you can run the application with Streamlit:
 
@@ -56,7 +63,7 @@ The following technologies were used in the development of this project:
 - **OpenAI**: GPT-based language models for natural language understanding and generation.
 
 
-### 5. Application UI
+### Application UI
 
   <img width="1267" alt="image" src="https://github.com/user-attachments/assets/fc19c522-fd82-4111-8fb8-415533b0de6d">
 
