@@ -8,6 +8,7 @@ from ResultFormatter import ResultFormatter
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 import os
+import pandas as pd
 
 class NutritionBot:
     def __init__(self, temp=0.5, 
@@ -45,3 +46,56 @@ class NutritionBot:
         answer = self.answer_generator.generate_answer(context=context, question=contextualized_question)
         final_result = self.result_formatter.format_result(answer, context)
         return final_result
+
+    def process_chat_df(self, path, output_path):
+        try:
+            # Read the input CSV file
+            df = pd.read_csv(path)
+
+            # Create new columns to store the results
+            # df['chat_history'] = ''  # Empty string for chat history
+            df['chat_history'] = df.apply(lambda _: [], axis=1)
+            df['contextualized_question'] = ''
+            df['context'] = ''
+            df['answer'] = ''
+            df['final_result'] = ''
+
+            # Process each row
+            for index, row in df.iterrows():
+                # Use query column as new_question
+                new_question = row['Query']
+
+                # Empty chat history as specified
+                chat_history = []
+
+                # Format chat history (though it will be empty)
+                formatted_chat_history = self.chat_history_formatter.format_chat_history(chat_history)
+
+                # Contextualize the question
+                contextualized_question = self.question_contextualizer.contextualize_question(formatted_chat_history,
+                                                                                              new_question)
+
+                # Retrieve context
+                context = self.context_retriever.get_context(contextualized_question)
+
+                # Generate answer
+                answer = self.answer_generator.generate_answer(context=context, question=contextualized_question)
+
+                # Format final result
+                final_result = self.result_formatter.format_result(answer, context)
+
+                # Store results in the DataFrame
+                df.at[index, 'chat_history'] = chat_history
+                df.at[index, 'contextualized_question'] = contextualized_question
+                df.at[index, 'context'] = context
+                df.at[index, 'answer'] = answer
+                df.at[index, 'final_result'] = final_result
+
+            # Save the updated DataFrame to the specified output path
+            df.to_csv(path, index=False)
+
+            return True
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
