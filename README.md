@@ -31,7 +31,7 @@ Navigate to the project directory and install the required Python packages:
 cd Nutrition-Facts-ChatBot
 pip install -r modules/requirements.txt
 ```
-### 2. Environment variable
+### 3. Environment variable
 
 Set the OpenAI Environment variable
 export $OPENAI_API_KEY = your_openai_api_key
@@ -56,7 +56,7 @@ The following technologies were used in the development of this project:
 - **OpenAI**: GPT-based language models for natural language understanding and generation.
 
 
-### 4. Application UI
+### 5. Application UI
 
   <img width="1267" alt="image" src="https://github.com/user-attachments/assets/fc19c522-fd82-4111-8fb8-415533b0de6d">
 
