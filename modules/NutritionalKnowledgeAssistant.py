@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
-from ContextRetriever import ContextRetriever
-from ChatHistoryFormatter import ChatHistoryFormatter
-from QuestionContextualizer import QuestionContextualizer
-from AnswerGenerator import AnswerGenerator
-from ResultFormatter import ResultFormatter
+from DocumentContextExtractor import ContextRetriever
+from ConversationTraceNormalizer import ChatHistoryFormatter
+from QueryContextInterpreter import QuestionContextualizer
+from ResponseComposer import AnswerGenerator
+from ResponsePresentationHandler import ResultFormatter
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 import os

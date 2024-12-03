@@ -1,9 +1,9 @@
 import streamlit as st
-from NutritionBot import NutritionBot
+from NutritionalKnowledgeAssistant import NutritionBot
 
 # Streamlit UI
 def main():
-    st.set_page_config(page_title="Nutrition Facts ChatBot", page_icon="🥦")
+    st.set_page_config(page_title="GreenBite", page_icon="🥦")
     
     # Initialize session state for chat history if not exists
     if 'chat_history' not in st.session_state:
@@ -13,7 +13,7 @@ def main():
     nutrition_bot = NutritionBot()
     
     # App title and description
-    st.title("🥦 Nutrition Facts ChatBot")
+    st.title("🥦 GreenBite")
     st.write("Ask questions about nutrition and health based on Dr. Michael Greger's Nutrition Facts videos!")
     
     # Predefined example questions
